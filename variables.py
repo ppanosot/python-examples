@@ -21,6 +21,15 @@ list2[0] = 5 # since list1 and list2 are binded to the same list object
              # list1 gets changed too
 print(list1) # will print [5, 3, 3,4]
 
+# so how exactly do you copy a list? the easiest way is
+list2 = list1[:]    # this is indexing (google for full details), in this case list1[:]
+                    # returns the first to last item in list1
+                    # so list2 is binded to a new list object with the same value as list1
+                    
+list2[3] = -5   # only changes list2 because they now refer to different object
+print(list2)    # will print [5, 3, 3, -5]
+print(list1)    # will print [5, 3, 3, 4]
+
 # this is not true for literals (the easiest way to think of literals is
 # the value that you literally typed out. strings, numbers)
 
